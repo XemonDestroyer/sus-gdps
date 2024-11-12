@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDPS Name</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="icon.ico" alt="GDPS Name Logo">
+            <h1>GDPS Name</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio" class="lang" key="inicio">Inicio</a></li>
+                <li><a href="downloads.html" class="lang" key="descargar">Descargar</a></li>
+                <li><a href="#" class="lang disabled" key="descargar">Demonlist</a></li>
+            </ul>
+        </nav>
+        <div class="language-selector">
+            <select id="languageSelect">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </header>
+
+    <section id="inicio">
+        <h2 class="lang" key="bienvenido">Bienvenido a GDPS Name</h2>
+        <p class="lang" key="explora">¡Explora, juega y comparte niveles en nuestra comunidad!</p>
+    </section>
+
+    <section id="descargar">
+        <h2 class="lang" key="descargar">Descargar el Cliente</h2>
+        <p class="lang" key="clic_descargar">Haz clic en el siguiente botón para descargar el cliente de GDPS Name:</p>
+        <button class="lang" key="boton_descargar">Descargar</button>
+    </section>
+
+
+    <script>
+        const translations = {
+            es: {
+                inicio: "Inicio",
+                descargar: "Descargar",
+                estadisticas: "Estadísticas",
+                contacto: "Contacto",
+                bienvenido: "Bienvenido a GDPS Name",
+                explora: "¡Explora, juega y comparte niveles en nuestra comunidad!",
+                clic_descargar: "Haz clic en el siguiente botón para descargar el cliente de GDPS Name:",
+                boton_descargar: "Descargar",
+                ver_estadisticas: "Aquí podrás ver las estadísticas actuales del servidor.",
+                pregunta: "Si tienes alguna pregunta, no dudes en contactarnos."
+            },
+            en: {
+                inicio: "Home",
+                descargar: "Download",
+                estadisticas: "Statistics",
+                contacto: "Contact",
+                bienvenido: "Welcome to GDPS Name",
+                explora: "Explore, play, and share levels in our community!",
+                clic_descargar: "Click the button below to download the GDPS Name client:",
+                boton_descargar: "Download",
+                ver_estadisticas: "Here you can view the current server statistics.",
+                pregunta: "If you have any questions, feel free to contact us."
+            }
+        };
+
+        document.getElementById('languageSelect').addEventListener('change', function () {
+            const lang = this.value;
+            document.querySelectorAll('.lang').forEach(function (element) {
+                const key = element.getAttribute('key');
+                element.textContent = translations[lang][key];
+            });
+        });
+    </script>
+</body>
+</html>
